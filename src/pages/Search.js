@@ -24,8 +24,8 @@ const Search = ({addToFavorites}) => {
 
   const getPokemon = async () => {
     try {
-      const res = await axios.get(URL + search);
-      console.log(res.data)
+      const searchLowerCase = search.toLowerCase();
+      const res = await axios.get(URL + searchLowerCase);
       setPokemon({
         name: res.data.name,
         sprite: res.data.sprites.front_default,
@@ -40,6 +40,7 @@ const Search = ({addToFavorites}) => {
       })
       setErrorMessage('')
     } catch (err) {
+      setPokemon('')
       setErrorMessage('Pokemon not found. Please try again!')
     }
   }

@@ -5,6 +5,7 @@ import './App.css';
 import Search from './pages/Search';
 import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
   const [favorites, setFavorites] = useState(() => {
@@ -14,6 +15,7 @@ function App() {
 
   const addToFavorites = (pokemon) => {
     setFavorites([...favorites, pokemon])
+    alert(`${pokemon.name} has been saved!`)
   }
 
   const removeFromFavorites = (id) => {
@@ -24,12 +26,12 @@ function App() {
     localStorage.setItem("favorites", JSON.stringify(favorites))
   }, [favorites])
 
-  console.log(favorites)
   return (
     <div className="App">
       <Router >
         <Navbar />
         <main>
+          <Hero />
           <Routes>
             <Route 
               path='/' 

@@ -4,8 +4,6 @@ import SearchResults from '../components/SearchResults';
 const Favorites = ({favorites, removeFromFavorites}) => {
   const [activePokemon, setActivePokemon] = useState('')
 
-  console.log(activePokemon)
-
   return (
     <article className='container'>
       <div className='favorites__container columns is-mobile'>

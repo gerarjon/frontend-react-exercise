@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className='navbar is-danger' role='navigation' aria-label='main navigation'>
       <div className="navbar-brand">
           <Link className="navbar-item" to="/">
-            Pokedex
+            PokedexGS
           </Link>
 
         {/* navbar burger */}
@@ -29,6 +29,9 @@ const Navbar = () => {
 
         {/* Navbar End */}
         <div className="navbar-end">
+        <a className='navbar-item' href='https://github.com/gerarjon/frontend-react-exercise' target='_blank' rel='noopener noreferrer'>
+          Github
+        </a>
         <Link className='navbar-item' to="/">
           Search
         </Link>

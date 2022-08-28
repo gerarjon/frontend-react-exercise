@@ -2,7 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses the [PokeAPI](https://pokeapi.co/). This project does not require an API key.
 
-
 ## Technologies
 * React
 * Bulma.io
@@ -12,6 +11,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Pokemon including their name, image, stats, and type will be displayed
 * Users can save their favorite Pokemon into LocalStorage
 * Users can view their saved Pokemon and remove them
+
+## Future Features/Activities to be Added
+* Loading notification during query
+* Notification to let users know if Pokemon is saved
+* Check if Pokemon is already saved
 
 ## Available Scripts
 In the project directory, you can run:
