@@ -17,6 +17,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Notification to let users know if Pokemon is saved
 * Check if Pokemon is already saved
 
+## Creation Process
+1. Identify and list the necessary feautures to create a minimal viable product.
+2. Read through and identify basic information from PokeAPI endpoint. More information can be added when necessary, but it's important to see what and how the data is returned. 
+3. Implement basic Bulma styling to lessen necessary work for mobile-responsiveness and overall look.
+4. Work on search functinality and displaying a single Pokemon.
+5. Save Pokemon array state to LocalStorage and have the LocalStorage updated every time state changes with useEffect
+6. Display Favorites onto separate page.
+
 ## Available Scripts
 In the project directory, you can run:
 
