@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import 'bulma/css/bulma.min.css';
+import { useState, useEffect } from 'react';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
+import Search from './pages/Search';
+import Favorites from './pages/Favorites';
+import Navbar from './components/Navbar';
 
 function App() {
+  const [favorites, setFavorites] = useState(() => {
+    const getFavorites = JSON.parse(localStorage.getItem('favorites'));
+    return getFavorites || []
+  });
+
+  const addToFavorites = (pokemon) => {
+    setFavorites([...favorites, pokemon])
+  }
+
+  const removeFromFavorites = (id) => {
+    setFavorites(favorites.filter((item) => item.number !== id))
+  }
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
+
+  console.log(favorites)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router >
+        <Navbar />
+        <main>
+          <Routes>
+            <Route 
+              path='/' 
+              element={
+                <Search 
+                  addToFavorites={addToFavorites}
+              />} 
+            />
+            <Route 
+              path='/favorites' 
+              element={
+                <Favorites 
+                  removeFromFavorites={removeFromFavorites}
+                  favorites={favorites}
+              />} 
+            />
+          </Routes>
+        </main>
+      </Router>
+      
+      
     </div>
   );
 }
